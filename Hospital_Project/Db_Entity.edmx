@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Hospital_ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Announcement">
+          <Key>
+            <PropertyRef Name="Announcement_ID" />
+          </Key>
+          <Property Name="Announcement_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Announcement" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Tbl_Appoinment">
+          <Key>
+            <PropertyRef Name="Appointment_ID" />
+          </Key>
+          <Property Name="Appointment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Appoinment_Date" Type="nvarchar" MaxLength="10" />
+          <Property Name="Appointment_Time" Type="nvarchar" MaxLength="10" />
+          <Property Name="Appointment_Branch" Type="nvarchar" MaxLength="30" />
+          <Property Name="Appointment_Doctor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Appointment_Statu" Type="bit" />
+          <Property Name="Patient_TC" Type="char" MaxLength="11" />
+          <Property Name="Patient_Symptom" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Tbl_Branch">
+          <Key>
+            <PropertyRef Name="Branch_ID" />
+          </Key>
+          <Property Name="Branch_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Branch_Name" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Tbl_Doctor">
+          <Key>
+            <PropertyRef Name="Doctor_ID" />
+          </Key>
+          <Property Name="Doctor_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Doctor_Name" Type="nvarchar" MaxLength="10" />
+          <Property Name="Doctor_LastName" Type="nvarchar" MaxLength="10" />
+          <Property Name="Doctor_Branch" Type="nvarchar" MaxLength="20" />
+          <Property Name="Doctor_TC" Type="char" MaxLength="11" />
+          <Property Name="Doctor_Password" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Tbl_Patient">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Name="Patient_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_Name" Type="nvarchar" MaxLength="10" />
+          <Property Name="Patient_LastName" Type="nvarchar" MaxLength="10" />
+          <Property Name="Patient_Tc" Type="char" MaxLength="11" />
+          <Property Name="Patient_Phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="Patient_Password" Type="nvarchar" MaxLength="30" />
+          <Property Name="Patient_Gender" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Tbl_Secretary">
+          <Key>
+            <PropertyRef Name="Secretary_ID" />
+          </Key>
+          <Property Name="Secretary_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Secretary_Name_LastName" Type="nvarchar" MaxLength="25" />
+          <Property Name="Secretary_TC" Type="char" MaxLength="11" />
+          <Property Name="Secretary_Password" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="Hospital_ProjectModelStoreContainer">
+          <EntitySet Name="Tbl_Announcement" EntityType="Self.Tbl_Announcement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Appoinment" EntityType="Self.Tbl_Appoinment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Branch" EntityType="Self.Tbl_Branch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Doctor" EntityType="Self.Tbl_Doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Patient" EntityType="Self.Tbl_Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Secretary" EntityType="Self.Tbl_Secretary" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Hospital_ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Announcement">
+          <Key>
+            <PropertyRef Name="Announcement_ID" />
+          </Key>
+          <Property Name="Announcement_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Announcement" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Appoinment">
+          <Key>
+            <PropertyRef Name="Appointment_ID" />
+          </Key>
+          <Property Name="Appointment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Appoinment_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Appointment_Time" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Appointment_Branch" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Appointment_Doctor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Appointment_Statu" Type="Boolean" />
+          <Property Name="Patient_TC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Patient_Symptom" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Branch">
+          <Key>
+            <PropertyRef Name="Branch_ID" />
+          </Key>
+          <Property Name="Branch_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Branch_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Doctor">
+          <Key>
+            <PropertyRef Name="Doctor_ID" />
+          </Key>
+          <Property Name="Doctor_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Doctor_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Doctor_LastName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Doctor_Branch" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Doctor_TC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Doctor_Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Patient">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Name="Patient_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Patient_LastName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Patient_Tc" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Patient_Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Patient_Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Patient_Gender" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Secretary">
+          <Key>
+            <PropertyRef Name="Secretary_ID" />
+          </Key>
+          <Property Name="Secretary_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Secretary_Name_LastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Secretary_TC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Secretary_Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Hospital_ProjectEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Announcement" EntityType="Self.Tbl_Announcement" />
+          <EntitySet Name="Tbl_Appoinment" EntityType="Self.Tbl_Appoinment" />
+          <EntitySet Name="Tbl_Branch" EntityType="Self.Tbl_Branch" />
+          <EntitySet Name="Tbl_Doctor" EntityType="Self.Tbl_Doctor" />
+          <EntitySet Name="Tbl_Patient" EntityType="Self.Tbl_Patient" />
+          <EntitySet Name="Tbl_Secretary" EntityType="Self.Tbl_Secretary" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Hospital_ProjectModelStoreContainer" CdmEntityContainer="Hospital_ProjectEntities1">
+          <EntitySetMapping Name="Tbl_Announcement">
+            <EntityTypeMapping TypeName="Hospital_ProjectModel.Tbl_Announcement">
+              <MappingFragment StoreEntitySet="Tbl_Announcement">
+                <ScalarProperty Name="Announcement_ID" ColumnName="Announcement_ID" />
+                <ScalarProperty Name="Announcement" ColumnName="Announcement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Appoinment">
+            <EntityTypeMapping TypeName="Hospital_ProjectModel.Tbl_Appoinment">
+              <MappingFragment StoreEntitySet="Tbl_Appoinment">
+                <ScalarProperty Name="Patient_Symptom" ColumnName="Patient_Symptom" />
+                <ScalarProperty Name="Appointment_ID" ColumnName="Appointment_ID" />
+                <ScalarProperty Name="Appoinment_Date" ColumnName="Appoinment_Date" />
+                <ScalarProperty Name="Appointment_Time" ColumnName="Appointment_Time" />
+                <ScalarProperty Name="Appointment_Branch" ColumnName="Appointment_Branch" />
+                <ScalarProperty Name="Appointment_Doctor" ColumnName="Appointment_Doctor" />
+                <ScalarProperty Name="Appointment_Statu" ColumnName="Appointment_Statu" />
+                <ScalarProperty Name="Patient_TC" ColumnName="Patient_TC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Branch">
+            <EntityTypeMapping TypeName="Hospital_ProjectModel.Tbl_Branch">
+              <MappingFragment StoreEntitySet="Tbl_Branch">
+                <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+                <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Doctor">
+            <EntityTypeMapping TypeName="Hospital_ProjectModel.Tbl_Doctor">
+              <MappingFragment StoreEntitySet="Tbl_Doctor">
+                <ScalarProperty Name="Doctor_ID" ColumnName="Doctor_ID" />
+                <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+                <ScalarProperty Name="Doctor_LastName" ColumnName="Doctor_LastName" />
+                <ScalarProperty Name="Doctor_Branch" ColumnName="Doctor_Branch" />
+                <ScalarProperty Name="Doctor_TC" ColumnName="Doctor_TC" />
+                <ScalarProperty Name="Doctor_Password" ColumnName="Doctor_Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Patient">
+            <EntityTypeMapping TypeName="Hospital_ProjectModel.Tbl_Patient">
+              <MappingFragment StoreEntitySet="Tbl_Patient">
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+                <ScalarProperty Name="Patient_LastName" ColumnName="Patient_LastName" />
+                <ScalarProperty Name="Patient_Tc" ColumnName="Patient_Tc" />
+                <ScalarProperty Name="Patient_Phone" ColumnName="Patient_Phone" />
+                <ScalarProperty Name="Patient_Password" ColumnName="Patient_Password" />
+                <ScalarProperty Name="Patient_Gender" ColumnName="Patient_Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Secretary">
+            <EntityTypeMapping TypeName="Hospital_ProjectModel.Tbl_Secretary">
+              <MappingFragment StoreEntitySet="Tbl_Secretary">
+                <ScalarProperty Name="Secretary_ID" ColumnName="Secretary_ID" />
+                <ScalarProperty Name="Secretary_Name_LastName" ColumnName="Secretary_Name_LastName" />
+                <ScalarProperty Name="Secretary_TC" ColumnName="Secretary_TC" />
+                <ScalarProperty Name="Secretary_Password" ColumnName="Secretary_Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
